@@ -1,0 +1,43 @@
+.button-wrapper {
+  background: #fefefe;
+  font: 100 24px/1.5 sans-serif;
+  text-align: center; }
+
+button:focus {
+  outline: none; }
+
+.meet {
+  background: none;
+  border: 0;
+  box-sizing: border-box;
+  padding: 1em 2em;
+  box-shadow: inset 0 0 0 2px #f45e61, inset 0 0 0 5px #DAD8A7;
+  color: #f45e61;
+  font-size: inherit;
+  font-weight: 700;
+  position: relative;
+  vertical-align: middle; }
+  .meet::before, .meet::after {
+    box-sizing: inherit;
+    content: '';
+    position: absolute;
+    border: 2px solid transparent;
+    width: 0;
+    height: 0;
+    top: 0;
+    left: 0; }
+  .meet:hover {
+    color: #3FB8AF; }
+  .meet:hover::before, .meet:hover::after {
+    width: 100%;
+    height: 100%; }
+  .meet:hover::before {
+    border-top-color: #3FB8AF;
+    border-right-color: #3FB8AF;
+    transition: width 0.4s ease-out, height 0.4s ease-out 0.4s; }
+  .meet:hover::after {
+    border-bottom-color: #3FB8AF;
+    border-left-color: #3FB8AF;
+    transition: height 0.4s ease-out, width 0.4s ease-out 0.4s; }
+
+/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,76 @@
+//Colors
+$background: #fefefe;
+$primary: #3FB8AF; // this is the hover color right now
+$secondary: #f45e61;
+$tertiary: #DAD8A7;
+
+// Basic styles
+.button-wrapper {
+  background: $background;
+  font: 100 24px/1.5 sans-serif;
+  text-align: center;
+}
+
+button:focus {
+  outline: none;
+}
+// Inherits from .draw
+.meet {
+  background: none;
+  border: 0;
+  box-sizing: border-box;
+  // margin: 1em;
+  padding: 1em 2em;
+
+  // Using inset box-shadow instead of border for sizing simplicity
+  box-shadow: inset 0 0 0 2px $secondary, inset 0 0 0 5px $tertiary;
+  color: $secondary;
+  font-size: inherit;
+  font-weight: 700;
+
+  // Required, since we're setting absolute on pseudo-elements
+  position: relative;
+  vertical-align: middle;
+
+
+  &::before,
+  &::after {
+    box-sizing: inherit;
+    content: '';
+    position: absolute;
+    border: 2px solid transparent;
+    width: 0;
+    height: 0;
+    top: 0;
+    left: 0;
+  }
+
+  &:hover {
+    color: $primary;
+  }
+
+  &:hover::before,
+  &:hover::after {
+    width: 100%;
+    height: 100%;
+  }
+
+  // Change colors
+  &:hover::before {
+    border-top-color: $primary;
+    border-right-color: $primary;
+    transition:
+    width 0.4s ease-out, // Width expands first
+    height 0.4s ease-out 0.4s; // And then height
+
+  }
+
+  &:hover::after {
+    border-bottom-color: $primary;
+    border-left-color: $primary;
+    transition: // Animate height first, then width
+    height 0.4s ease-out,
+    width 0.4s ease-out 0.4s;
+  }
+
+}
